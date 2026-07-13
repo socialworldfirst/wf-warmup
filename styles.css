@@ -119,3 +119,40 @@ figure.pic{border-radius:18px;overflow:hidden;position:relative;background:#0E16
   .gate{flex-direction:column}
   .gate .mid{width:auto;height:1px}
 }
+
+/* ── v3 design fixes: breathing room + density ───────────────── */
+.slide{padding:76px 10vw}
+.wrap{max-width:980px}
+.card{padding:26px 28px}
+.grid2{gap:26px}.grid3{gap:22px}
+p.lead{max-width:54ch}
+.num{right:10vw}
+.strip{padding:0 10vw}
+/* placeholder fix: tag no longer overlaps caption text */
+.ph{min-height:180px;padding:52px 20px 24px}
+.ph .cap{margin-top:8px}
+/* timeline home */
+.tl-hero{padding:96px 10vw 30px;max-width:1080px;margin:0 auto}
+.tl-kicker{font-size:12px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--grey);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.tl-kicker::before{content:"";width:34px;height:2px;background:var(--wf)}
+.tl-hero h1{font-size:clamp(38px,5.6vw,72px);margin-bottom:16px}
+.tl-hero p{font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:var(--grey);max-width:60ch}
+.tl-band{max-width:1080px;margin:34px auto 0;padding:0 10vw}
+.tl-line{position:relative;height:2px;background:var(--line);margin:56px 0 0}
+.tl-line .seg1{position:absolute;left:0;width:38%;top:0;height:2px;background:var(--world)}
+.tl-line .seg2{position:absolute;right:0;width:56%;top:0;height:2px;background:var(--europe)}
+.tl-phases{display:grid;grid-template-columns:38fr 56fr;gap:6%;max-width:1080px;margin:0 auto;padding:26px 10vw 90px}
+.phase h2{font-size:clamp(22px,2.6vw,30px);margin:0 0 4px}
+.phase .ph-date{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
+.phase.red .ph-date{color:var(--world)}
+.phase.blue .ph-date{color:var(--europe)}
+.day{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.day .d{font-weight:900;font-size:14px;letter-spacing:.02em}
+.day .w{font-size:14.5px;line-height:1.55;color:#39414E}
+.day .w b{color:var(--ink)}
+.day .w .why{display:block;font-size:12.5px;color:#9AA1AC;margin-top:2px}
+.tl-cta{display:inline-block;margin-top:22px;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--ink);padding:13px 22px;border-radius:100px;text-decoration:none}
+.tl-cta:hover{background:var(--wf)}
+.phase.red .tl-cta{background:var(--world)}.phase.red .tl-cta:hover{background:var(--wf)}
+.phase.blue .tl-cta{background:var(--europe)}.phase.blue .tl-cta:hover{background:var(--wf)}
+@media(max-width:900px){.tl-phases{grid-template-columns:1fr;gap:44px}.tl-line{display:none}}
