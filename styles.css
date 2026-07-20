@@ -260,7 +260,7 @@ h3{font-size:15px;margin-bottom:5px}
 .datenav a.sub::before{left:32px;width:12px}
 
 /* source-document tables: keep their own ratio, reserve space, never collapse */
-figure.pic img[width]{height:auto;object-fit:contain}
+figure.pic img[width]{height:auto;max-height:56vh;width:auto;max-width:100%;margin:0 auto;display:block;object-fit:contain}
 /* the two-concept OOH slide stacks image+card twice — cap the art on short screens */
 #s-ooh figure.pic{max-height:30vh}
 /* short laptop windows: shave the dense slides rather than clip them */
