@@ -247,6 +247,54 @@ h3{font-size:15px;margin-bottom:5px}
 .roomtile h3{font-size:14px;margin-bottom:4px;line-height:1.15}
 .roomtile p{font-size:12px;line-height:1.45;color:var(--grey)}
 @media(max-width:1180px){.roomgrid{grid-template-columns:repeat(2,1fr)}}
+/* ── v10: nav rail carries 26 entries — tighten, and never clip ── */
+.datenav{gap:0;overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none}
+.datenav::-webkit-scrollbar{display:none}
+.datenav a{padding:1px 6px 1px 44px;line-height:1.12}
+.datenav a .dt{font-size:8.5px;letter-spacing:.12em;line-height:1.05}
+.datenav .dd{font-size:11.5px;line-height:1.2}
+.datenav a.sub{padding:1px 6px 1px 58px}
+.datenav a.sub .dd,.datenav a.sub{font-size:10.5px}
+.datenav a::after{width:8px;height:8px}
+.datenav a.sub::after{left:26px;width:4.5px;height:4.5px}
+.datenav a.sub::before{left:32px;width:12px}
+
+/* the two-concept OOH slide stacks image+card twice — cap the art on short screens */
+#s-ooh figure.pic{max-height:30vh}
+/* short laptop windows: shave the dense slides rather than clip them */
+@media (max-height:680px){
+  .card{padding:13px 17px}
+  .tbl td{padding:5px 11px}
+  .tbl th{padding:5px 11px}
+  h2{margin-bottom:12px}
+  .foot{margin-top:10px}
+  .ros td{padding:4px 11px}
+}
+
+/* true-linear bar charts — colour on the bar only */
+.bars{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.bar-row{display:grid;grid-template-columns:132px 1fr 78px;gap:11px;align-items:center}
+.bar-label{font-size:12px;font-weight:700;color:var(--grey);line-height:1.2}
+.bar-track{display:block;height:13px;background:#EDF0F4;border-radius:100px;overflow:hidden}
+.bar-fill{display:block;height:100%;border-radius:100px;background:var(--world)}
+.bar-fill.blue{background:var(--europe)}
+.bar-fill.pink{background:var(--wf)}
+.bar-fill.grey{background:#AEB6C2}
+.bar-val{font-size:12.5px;font-weight:800;text-align:right;letter-spacing:-.01em}
+.dark .bar-track{background:#1E2A40}
+.dark .bar-label{color:#8B93A1}
+.dark .bar-val{color:#fff}
+.chartnote{font-size:11px;color:#9AA1AC;margin-top:8px;letter-spacing:.02em}
+/* run of show */
+.ros{width:100%;border-collapse:collapse}
+.ros td{padding:6px 12px;border-bottom:1px solid var(--line);font-size:13px;line-height:1.45;vertical-align:top}
+.ros tr:last-child td{border-bottom:none}
+.ros .t{font-weight:900;width:74px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ros .hi td{background:#FFF5F8}
+.ros .hi .t{color:var(--world)}
+/* inline doc links */
+.doclink{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--europe);text-decoration:none;border-bottom:1.5px solid #B9CCEB;word-break:break-all}
+.doclink:hover{color:var(--wf);border-bottom-color:var(--wf)}
 /* lightbox */
 figure.pic img,.aplus-img img,.roomtile img{cursor:zoom-in}
 .lightbox{position:fixed;inset:0;z-index:200;background:rgba(6,9,15,.93);display:none;align-items:center;justify-content:center;padding:5vh 5vw;cursor:zoom-out;backdrop-filter:blur(4px)}
